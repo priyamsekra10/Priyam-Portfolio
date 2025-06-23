@@ -3,63 +3,66 @@ import { kebabCase } from "@/utils/utils";
 const projects = [
   {
     id: 0,
-    title: "Driver Analysis",
-    desc: "Developed a comprehensive Driver Behavior Analysis system integrating various computer vision models to assess and enhance road safety.",
-    img: `/da.jpeg`,
-    link: "https://resq-notify.onrender.com/",
-    tags: ["Tensorflow", "YOLO", "Python", "OpenCV", "PyTorch"]
+    title: "Kailasa: Real-Time Speech-to-Speech Conversational AI",
+    desc: "Developed a low-latency speech-to-speech (STS) conversational AI system that combines automatic speech recognition (ASR), language models (LLMs), and text-to-speech (TTS) for fluid, real-time conversations. Leveraged prompt engineering techniques for contextual awareness, enabling highly interactive human-computer dialogue systems for use in customer support, IVRs, and AI assistants. Integrated interruption detection logic, enhancing user experience by enabling the assistant to pause or resume based on speaker activity.",
+    img: `/portfolio/kailasa.png`,
+    link: "https://web.kailasa.app/",
+    tags: ["AI Voice Bot", "TTS/STT", "Conversational AI", "Python", "AWS"]
   },
   {
     id: 1,
-    title: "Crash Detection",
-    desc: "Developing a computer vision system that detects vehicle crashes through dashcams, subsequently alerting the user's emergency contacts via app notifications, email, and WhatsApp.",
-    img: `/cd.jpeg`,
+    title: "Resq-Notify: AI Fleet Management Dashboard",
+    desc: "Developed an AI-powered Fleet Management Dashboard that monitors vehicle status, performance, and location in real-time. Integrated with IoT sensors, it provides predictive analytics, driver behavior insights, and automated maintenance alerts to optimize fleet efficiency and reduce operational costs.",
+    img: `/da.jpeg`,
     link: "https://resq-notify.onrender.com/",
     tags: [
-      "Tensorflow", "YOLO", "Python", "OpenCV", "PyTorch", "MobileNet Model"
+      "Fleet Management", "Predictive Analytics", "Python", "AI Automation", "IoT"
     ]
-  },
-  {
-    id: 3,
-    title: "Automated Employee Cybersecurity Training System",
-    desc: "Developed an AI-powered Employee Cybersecurity Training Software, now actively employed by aais.ai Developed machine learning model that creates phishing simulations based on each user's interests and role, ensuring they can recognize and respond to real Cybersecurity threats. Incorporated robust error handling mechanisms to safeguard the product from wear and tear, optimizing its performance by conducting alpha and beta testing.",
-    img: `/WhatsApp Image 2024-01-21 at 11.20.29 PM.jpeg`,
-    tags: ["AI", "ML", "Python","Github","Django","MongoDB"]
   },
   {
     id: 2,
-    title: "Twitter tweets Analysis",
-    desc: "Integrated a client-provided NLP model to categorize tweets pertaining to disaster assistance, storing relevant findings in a MongoDB database. The curated data was then linked to a React-based web interface through a REST API developed with the FastAPI framework.",
-    img: `/DM.jpeg`,
-    link: "https://tweetmydisasters.com/",
-    tags: ["React", "Tailwind CSS", "Javascript", "Next.js","Python","RestAPI","FastAPI"]
+    title: "Vizaro: GenAI-AR Framework for Personalised E-Commerce",
+    desc: "Developed a GenAI-AR framework that enables personalized e-commerce experiences through AI-generated AR models. Integrated with AWS, it provides real-time product visualization, personalized recommendations, and interactive shopping features for enhanced customer engagement.",
+    img: `/portfolio/vizaro.mp4`,
+    tags: ["Generative AI", "E-Commerce", "AR Shopping","WebAR","AWS","MongoDB"]
   },
-
+  {
+    id: 3,
+    title: "AWS-Based Automated Notification System with GenAI Summarization",
+    desc: "Developed a comprehensive automated notification system leveraging AWS Lambda for serverless automation. Integrated Generative AI for intelligent content summarization and automated SMS/WhatsApp notifications. The system provides real-time alerts and personalized communication through API integrations, enhancing user engagement and information delivery.",
+    img: `/portfolio/AWS-notify.png`,
+    tags: ["AWS Lambda", "Serverless Automation", "Generative AI", "SMS Notifications", "WhatsApp Automation", "API Integration", "AI Summarization"]
+  },
   {
     id: 4,
-    title: "Memory-Enhanced AI Assistants (CHATBOTS)",
-    desc: "Created advanced chatbots that incorporated memory and learning abilities to deliver AI based customer support and natural language processing. These chatbots could remember past conversations, save relevant information, and engage users in more personalized and natural interactions.",
-    img: `/static/projects/newnex.jpg`,
-    tags: ["TensorFlow", "Python", "NLP"]
+    title: "AI-Powered Father-Son Relationship Conflict Resolution App",
+    desc: "Created an innovative mental health application focused on resolving father-son relationship conflicts through empathetic AI dialogue. The app leverages generative AI to provide emotional intelligence support, facilitating constructive conversations and promoting family harmony through AI-driven conflict resolution strategies.",
+    img: `/portfolio/Father.png`,
+    tags: ["Mental Health", "Conflict Resolution", "Generative AI", "Empathetic AI", "AI Dialogue", "Family App", "Emotional Intelligence"]
   },
   {
     id: 5,
-    title: "News Recommendation System",
-    desc: "Designed news recommendation system based on user preferences and behavior on a website, offering personalized content and services using multiple ML algorithms",
+    title: "AI-Driven Phishing Simulation & Recommendation System (AAIS.AI Internship)",
+    desc: "Developed an advanced cybersecurity platform during AAIS.AI internship that creates realistic phishing simulations using generative AI. The system provides personalized security awareness training through email automation and intelligent recommendation systems, enhancing employee training and organizational security posture.",
     img: `/WhatsApp Image 2024-01-21 at 11.21.02 PM.jpeg`,
-    tags: ["AI","ML","GitHub","MongoDB","Python"]
+    tags: ["Cybersecurity", "Phishing Simulation", "Generative AI", "Email Automation", "Security Awareness", "Recommendation System", "Employee Training"]
   },
   {
     id: 6,
-    title: "Typo squatting Domain Search",
-    desc: "Developed a project to protect users from typo squatting threats by searching for registered domains that are similar or closely related to the user's domain. The system alerts users to potential risks, helping them identify and avoid malicious websites that may attempt to deceive or compromise their online presence.",
-    img: `/WhatsApp Image 2024-01-21 at 11.21.03 PM.jpeg`,
-    tags: [
-      "AI","ML","GitHub","MongoDB","Python"
-    ]
-  },
+    title: "Power Apps Automation for Business Operations (Client Work)",
+    desc: "Delivered comprehensive business process automation solutions using Microsoft Power Apps and Power Automate. Integrated SharePoint workflows and implemented low-code/no-code development strategies to streamline client operations, reducing manual tasks and improving efficiency across various business processes.",
+    img: `/portfolio/power.png`,
+    tags: ["Power Apps", "Workflow Automation", "Power Automate", "Low-Code", "Business Process Automation", "SharePoint Integration", "No-Code Development"]
+  },      
   {
     id: 7,
+    title: "Web Scraper-Driven Generative AI Chat Assistant",
+    desc: "Developed an intelligent website chatbot that combines web scraping capabilities with generative AI for enhanced customer support. The system extracts relevant data from websites and provides automated chat responses, creating interactive websites with AI-powered customer service capabilities.",
+    img: `/portfolio/scrap.svg`,
+    tags: ["Web Scraping", "Generative AI", "Website Chatbot", "Data Extraction", "AI Customer Support", "Automated Chat", "Interactive Websites"]
+  },
+  {
+    id: 9,
     title: "KPI Report: Two-Wheeler Insurance Market in India",
     desc: "The report provides essential insights into the performance indicators of the two-wheeler insurance market in India. It covers market trends, growth rates, customer preferences, and key player performance in making informed decisions.",
     img: `/WhatsApp Image 2024-01-21 at 11.21.04 PM.jpeg`,
@@ -69,14 +72,14 @@ const projects = [
     ]
   },
   {
-    id: 8,
+    id: 10,
     title: "Social Engineering Attack Monitor",
     desc: "This system searched for and scraped similar news articles to detect social engineering attacks. By analyzing the gathered data, it could proactively identify potential threats and enhance cybersecurity measures.",
     img: `/WhatsApp Image 2024-01-21 at 11.21.04 PM-2.jpeg`,
     tags: ["AI","ML","GitHub","MongoDB","Python"]
   },
   {
-    id: 9,
+    id: 11,
     title: "Trading Strategy",
     desc: "Leveraging US stock data, I made data-driven investment decisions. By analyzing market trends and patterns, the system identified promising opportunities, enabling informed choices for maximizing investment returns.",
     img: `/WhatsApp Image 2024-01-21 at 11.21.05 PM.jpeg`,
@@ -84,11 +87,12 @@ const projects = [
     tags: ["Data Analysis","GitHub","MongoDB","Python"]
   },
   {
-    id: 10,
-    title: "Food order and delivery management system",
-    desc: "A Python and Oracle-based platform was created for users to explore and order meals from different stores, with data visualization using Matplotlib.",
-    img: `/WhatsApp Image 2024-01-21 at 11.21.05 PM-2.jpeg`,
-    tags: ["Python","MYSQL","Data Analysis","Github"]
+    id: 12,
+    title: "Twitter tweets Analysis",
+    desc: "Integrated a client-provided NLP model to categorize tweets pertaining to disaster assistance, storing relevant findings in a MongoDB database. The curated data was then linked to a React-based web interface through a REST API developed with the FastAPI framework.",
+    img: `/DM.jpeg`,
+    link: "https://tweetmydisasters.com/",
+    tags: ["React", "Tailwind CSS", "Javascript", "Next.js","Python","RestAPI","FastAPI"]
   }
 ];
 
