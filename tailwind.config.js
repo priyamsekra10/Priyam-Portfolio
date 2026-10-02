@@ -1,67 +1,54 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   content: [
-    "./node_modules/flowbite/**/*.js"
-],
-  mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./data/**/*.{js,ts}"
+  ],
   theme: {
-    fontFamily: {
-      sans: ["Be Vietnam Pro", "Inter", "system-ui", "sans"],
-      monospace: ["DM Mono", "monospace"],
-    },
-    colors: {
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      indigo: colors.indigo,
-      red: colors.rose,
-      yellow: colors.yellow,
-      blue: colors.blue,
-      green: colors.green,
-      orange: colors.orange,
-      purple: colors.purple,
-    pink: colors.pink,
-    },
     extend: {
-      colors: {
-        bg: "#000a1f",
-        "fun-gray-light": "#b2bbcf",
-        "fun-gray": "#7b89a8",
-        "fun-gray-medium": "#767c85",
-        "fun-gray-darker": "#2a2a2c",
-        "fun-gray-dark": "#1F1F20",
-        "fun-gray-darkest": "#141414",
-        "fun-pink": "#00c7ff",
-        "fun-pink-darker": "#000f2e",
-        "fun-pink-darkest": "#000c24",
-        "fun-pink-dark": "#192742",
-        "fun-pink-light": "#009ac5",
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"]
       },
-      rotate: {
-        '360': '360deg'
+      colors: {
+        bg: "rgb(var(--bg) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        raised: "rgb(var(--raised) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        faint: "rgb(var(--faint) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        line: "rgb(255 255 255 / 0.08)",
+        "line-strong": "rgb(255 255 255 / 0.16)"
+      },
+      maxWidth: {
+        page: "1180px"
+      },
+      borderRadius: {
+        "4xl": "2rem"
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        rise: {
+          "0%": { opacity: "0", transform: "translateY(18px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        pulseDot: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.35" }
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
         }
       },
       animation: {
-        'fadeInAndBounce': 'fadeIn 3s ease-out',
-      },
-      willChange: {
-        'projectCard': 'border-color, opacity, transform',
+        rise: "rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "pulse-dot": "pulseDot 2.4s ease-in-out infinite",
+        marquee: "marquee 38s linear infinite"
       }
-    },
+    }
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('flowbite/plugin')
-  ],
+  plugins: [require("@tailwindcss/forms")]
 };

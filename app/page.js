@@ -1,19 +1,19 @@
-import Page from "@/components/utility/Page";
-import Hero from "@/components/home/Hero";
-import Main from "@/components/main";
-import CTA from "@/components/home/CTA";
+import Hero from "@/components/sections/Hero";
+import Lifecycle from "@/components/sections/Lifecycle";
+import Work from "@/components/sections/Work";
+import About from "@/components/sections/About";
+import Recognition from "@/components/sections/Recognition";
+import ContactCTA from "@/components/sections/ContactCTA";
 
 export default function Home() {
   return (
-    <Page
-      currentPage="Home"
-      meta={{
-        desc: "Experienced ReactJS developer adept in crafting dynamic web applications with Next.js and Tailwind CSS. Explore my portfolio for innovative projects and seamless user experiences."
-      }}
-    >
+    <>
       <Hero />
-      <Main />
-      <CTA />
-    </Page>
+      <Lifecycle />
+      <Work />
+      <About />
+      <Recognition />
+      <ContactCTA />
+    </>
   );
 }

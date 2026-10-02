@@ -1,20 +1,8 @@
 module.exports = {
-output: "export", // comment this line while development
-  assetPrefix: "/",
- exportTrailingSlash: true, // comment this line while development
-  basePath: "",
-  // trailingSlash: true,
-  swcMinify: true,
+  // Static export for hosting on any static host (the `deploy` script publishes `out/`).
+  output: "export",
+  trailingSlash: true,
   images: {
     unoptimized: true
-  },
-  async redirects() {
-    return [
-      {
-        source: "/blog",
-        destination: "/",
-        permanent: true
-      }
-    ];
   }
 };

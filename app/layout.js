@@ -1,121 +1,93 @@
-/* eslint-disable @next/next/next-script-for-ga */
 import "./globals.css";
-import Head from "next/head";
-// import "tailwindcss/tailwind.css";
+import { Bricolage_Grotesque, Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
+import { site } from "@/data/site";
+
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  adjustFontFallback: false
+});
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+  adjustFontFallback: false
+});
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+
+const title = `${site.name} · ${site.role}`;
 
 export const metadata = {
-  applicationName: "PriyamSekra",
-  keywords: [
-    "PriyamSekra",
-    "PriyamSekra",
-    "freelancers",
-    "react developer",
-    "reactjs freelancer",
-    "nextjs"
-  ],
-  title: "PriyamSekra",
-  description:
-    "Experienced ReactJS developer adept in crafting dynamic web applications with Next.js and Tailwind CSS. Explore my portfolio for innovative projects and seamless user experiences.",
-  alternates: {
-    canonical: "https://miteshtagadiya.js.org/"
+  metadataBase: new URL(site.url),
+  applicationName: site.name,
+  title: {
+    default: title,
+    template: `%s · ${site.name}`
   },
-  metadataBase: new URL("https://miteshtagadiya.js.org"),
+  description: site.description,
+  keywords: [
+    "Priyam Sekra",
+    "AI engineer",
+    "voice AI",
+    "conversational AI",
+    "LLM agents",
+    "FastAPI",
+    "React Native",
+    "Flutter"
+  ],
+  authors: [{ name: site.name, url: site.socials.linkedin }],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "PriyamSekra",
-    description:
-      "Experienced ReactJS developer adept in crafting dynamic web applications with Next.js and Tailwind CSS. Explore my portfolio for innovative projects and seamless user experiences.",
-    url: "https://miteshtagadiya.js.org",
-    siteName: "PriyamSekra",
-    images: [
-      {
-        url: "https://miteshtagadiya.js.org/static/misc/og.png",
-        alt: "PriyamSekra"
-      }
-    ],
+    title,
+    description: site.description,
+    url: "/",
+    siteName: site.name,
     locale: "en_US",
     type: "website"
   },
-  icons: {
-    icon: [
-      { rel: "icon", url: `static/favicon/favicon.ico` },
-      {
-        rel: "icon",
-        url: `static/favicon/apple-touch-icon.png`,
-        sizes: "180x180",
-        type: "image/png"
-      },
-      {
-        rel: "icon",
-        url: `static/favicon/favicon-16x16.png`,
-        sizes: "16x16",
-        type: "image/png"
-      },
-      {
-        rel: "icon",
-        url: `static/favicon/favicon-32x32.png`,
-        sizes: "32x32",
-        type: "image/png"
-      }
-    ],
-    shortcut: [`static/favicon/favicon.ico`],
-    apple: [
-      {
-        url: `static/favicon/apple-touch-icon.png`,
-        sizes: "180x180",
-        type: "image/png"
-      }
-    ]
-  },
-  manifest: `static/favicon/site.webmanifest`,
   twitter: {
     card: "summary_large_image",
-    title: "PriyamSekra",
-    description:
-      "Experienced ReactJS developer adept in crafting dynamic web applications with Next.js and Tailwind CSS. Explore my portfolio for innovative projects and seamless user experiences.",
-    url: "https://miteshtagadiya.js.org",
-    images: {
-      url: "https://miteshtagadiya.js.org/static/misc/og.png",
-      alt: "PriyamSekra"
-    }
+    title,
+    description: site.description
   }
 };
+
+export const viewport = {
+  themeColor: "#08090b",
+  width: "device-width",
+  initialScale: 1
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning={true} lang="en">
-      <Head>
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href={`static/favicon/favicon.ico`}
-          sizes="16x16"
-        />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','G-4H4HEZKQT1');`
-          }}
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-4H4HEZKQT1', {
-                page_path: window.location.pathname,
-              });
-          `
-          }}
-        />
-      </Head>
-      <body>{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${sans.variable} ${display.variable} ${serif.variable} ${mono.variable}`}
+    >
+      <head>
+        {/* Enables the scroll-reveal hidden state only when JS is running. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body>
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-bg"
+        >
+          Skip to content
+        </a>
+        <Nav />
+        <main id="content" className="relative">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
